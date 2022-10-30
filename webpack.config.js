@@ -61,7 +61,15 @@ const config = {
       },
     },
     optimization: {
-        chunkIds: 'named',
+        minimize: true,
+        emitOnErrors: true,
+        concatenateModules: true,
+        moduleIds: "size",
+        mergeDuplicateChunks: true,
+        runtimeChunk: "single",
+        splitChunks: {
+            chunks: "async",
+        },
     },     
     devServer: {
     contentBase: path.join(__dirname, 'dist'),

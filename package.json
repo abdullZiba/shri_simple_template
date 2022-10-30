@@ -17,8 +17,8 @@
         "rxjs": "^7.1.0"
     },
     "scripts": {
-        "start": "http-server -c-1 ./",
-        "build": "node_modules/.bin/webpack",
+        "start": "npx webpack serve",
+        "build": "npx webpack --mode production",
         "lint:js": "eslint:recommended",
         "lint:css": "stylelint \"**/*.css\"",
         "analyze": "stylelint-config-standard",
