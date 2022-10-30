@@ -13,8 +13,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'dist'),
-      
+        template: path.resolve("public/index.html"),
     }),
     new StatoscopePlugin({
       saveStatsTo: 'stats.json',

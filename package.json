@@ -19,9 +19,10 @@
     "scripts": {
         "start": "npx webpack serve",
         "build": "npx webpack --mode production",
-        "lint:js": "eslint:recommended",
-        "lint:css": "stylelint \"**/*.css\"",
-        "analyze": "stylelint-config-standard",
+        "lint:js": "npx eslint src",
+        "lint:css": "npx stylelint \"src/**/*.css\"",
+        "analyze": "statoscope serve stats.json -o",
+        "deploy": "gh-pages -d build",
         "validate": "node_modules/.bin/statoscope validate -i stats.json --config=./statoscope.config.js"
     },
     "devDependencies": {
