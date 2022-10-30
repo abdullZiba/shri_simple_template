@@ -17,9 +17,8 @@
         "rxjs": "^7.1.0"
     },
     "scripts": {
-        "start": "node index.js",
-        "build": "npm run html",
-        "test": "editorconfig-checker",
+        "start": "http-server -c-1 ./",
+        "build": "node_modules/.bin/webpack",
         "lint:js": "eslint:recommended",
         "lint:css": "stylelint \"**/*.css\"",
         "analyze": "stylelint-config-standard",

@@ -7,7 +7,7 @@ const config = {
     about: './src/pages/About.js',
     home: './src/pages/Home.js',
     main: {
-      dependOn: 'about',
+      dependOn: ['about', 'home'],
       import: './src/index.js'
     },
   },
@@ -30,16 +30,20 @@ const config = {
   },
   module: {
     rules: [
-      {
-        test: /\.m?js$/,
-        exclude: /(node_modules)/,
+    {
+        test: /\.(js|jsx)$/i,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      },
+            loader: "babel-loader",
+            options: {
+            presets: [
+                "@babel/preset-env",
+                ["@babel/preset-react", { runtime: "automatic" }],
+            ],
+            },
+        },
+        exclude: /(node_modules)/,
+        resolve: { extensions: [".js", ".jsx"] },
+    },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
@@ -56,7 +60,10 @@ const config = {
         'react-is': path.resolve(__dirname, 'node_modules/react-is/cjs/react-is.production.min.js')
       },
     },
-  devServer: {
+    optimization: {
+        chunkIds: 'named',
+    },     
+    devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000,
