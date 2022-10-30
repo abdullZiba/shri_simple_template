@@ -17,12 +17,12 @@
         "rxjs": "^7.1.0"
     },
     "scripts": {
-        "start": "echo \"implement me\"",
-        "build": "echo \"implement me\"",
-        "test": "echo \"implement me\"",
-        "lint:js": "echo \"implement me\"",
-        "lint:css": "echo \"implement me\"",
-        "analyze": "echo \"implement me\"",
+        "start": "node index.js",
+        "build": "npm run html",
+        "test": "editorconfig-checker",
+        "lint:js": "eslint:recommended",
+        "lint:css": "stylelint \"**/*.css\"",
+        "analyze": "stylelint-config-standard",
         "validate": "node_modules/.bin/statoscope validate -i stats.json --config=./statoscope.config.js"
     },
     "devDependencies": {
