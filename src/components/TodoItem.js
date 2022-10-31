@@ -6,7 +6,7 @@ import {UUID} from '../utils/uuid';
 import styles from './index.module.css';
 
 export const TodoItem= props => {
-    const index = props;
+    const { index } = props;
 
     const dispatch = useDispatch();
     const text = useSelector((state) => state.items[index]);
